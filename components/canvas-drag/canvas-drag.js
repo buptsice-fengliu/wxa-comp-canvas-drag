@@ -30,8 +30,9 @@ CanvasDrag.initByArr = (arr) => {
   const canvasDrag = CanvasDrag();
   if (!canvasDrag) {
     console.error('请设置组件的id="canvas-drag"!!!');
+  } else {
+    return CanvasDrag().initByArr(arr);
   }
-  return CanvasDrag().initByArr(arr);
 };
 
 CanvasDrag.exportJson = () => {
