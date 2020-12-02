@@ -62,9 +62,7 @@ class DragGraph {
     this.MIN_WIDTH = 20;
     this.MIN_FONTSIZE = 10;
   }
-}
 
-DragGraph.prototype = {
   /**
    * 绘制元素
    */
@@ -125,7 +123,8 @@ DragGraph.prototype = {
       }
     }
     this.ctx.restore();
-  },
+  }
+
   /**
    * 给矩形描边
    * @private
@@ -141,7 +140,8 @@ DragGraph.prototype = {
     this._draw_line(this.ctx, p[2], p[3]);
     this._draw_line(this.ctx, p[3], p[0]);
     ctx.restore();
-  },
+  }
+
   /**
    * 画一条线
    * @param ctx
@@ -153,7 +153,8 @@ DragGraph.prototype = {
     ctx.moveTo(a[0], a[1]);
     ctx.lineTo(b[0], b[1]);
     ctx.stroke();
-  },
+  }
+
   /**
    * 判断点击的坐标落在哪个区域
    * @param {*} x 点击的坐标
@@ -227,7 +228,8 @@ DragGraph.prototype = {
     }
     // 不在选择区域里面
     return false;
-  },
+  }
+
   /**
    *  判断一个点是否在多边形内部
    *  @param points 多边形坐标集合
@@ -249,7 +251,8 @@ DragGraph.prototype = {
       if (intersect) inside = !inside;
     }
     return inside;
-  },
+  }
+
   /**
    * 计算旋转后矩形四个顶点的坐标（相对于画布）
    * @private
@@ -285,7 +288,8 @@ DragGraph.prototype = {
         this.rotate,
       ),
     ];
-  },
+  }
+
   /**
    * 计算旋转后的新坐标（相对于画布）
    * @param x
@@ -306,7 +310,8 @@ DragGraph.prototype = {
       (y - centerY) * Math.cos((degrees * Math.PI) / 180) +
       centerY;
     return [newX, newY];
-  },
+  }
+
   /**
    *
    * @param {*} px 手指按下去的坐标
@@ -382,11 +387,13 @@ DragGraph.prototype = {
       this.x = this.centerX - textWidth / 2;
       this.y = this.centerY - textHeight / 2;
     }
-  },
+  }
+
   toPx(rpx) {
     return rpx * this.factor;
-  },
-};
+  }
+}
+
 Component({
   /**
    * 组件的属性列表
